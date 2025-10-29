@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1> Nanda's Quiz </h1>
+  </header>
+
+  <main id="quiz-container">
+
+    <button id="start-btn">Iniciar Quiz</button>
+    
+    <div id="loading" class="hidden">Carregando perguntas...</div>
+    <div id="question-container" class="hidden">
+      <h2 id="question-text"></h2>
+      <div id="answers"></div>
+      <button id="next-btn" class="hidden">Próxima</button>
+    </div>
+    <div id="result-container" class="hidden">
+      <h2 id="score-text"></h2>
+      <button id="restart-btn">Jogar novamente</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Quiz Interativo | Desenvolvido para o Projeto Integrador</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
