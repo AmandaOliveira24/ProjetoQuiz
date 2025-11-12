@@ -1,72 +1,150 @@
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --lilac-principal: #7F54E6; /* Lilás Principal (Botões) */
+    --blue-background: #F0F4FF; /* Azul de Fundo Suave */
+    --dark-purple: #4B0082; /* Roxo Escuro (Textos) */
+    --light-blue: #A2C2FF; /* Azul Claro (Destaque Suave) */
+    --white: #FFFFFF;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f9fa;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--blue-background);
+    color: var(--dark-purple);
+    line-height: 1.6;
+    
+    /* Centralização com Flexbox */
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
 }
 
-header, footer {
-  text-align: center;
-  background: #007BFF;
-  color: white;
-  width: 100%;
-  padding: 10px;
+/* -------------------------------------- */
+/* 2. CABEÇALHO E RODAPÉ */
+/* -------------------------------------- */
+
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    background-color: var(--white);
+    border-bottom: 3px solid var(--lilac-principal);
 }
 
-#quiz-container {
-  margin-top: 30px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
+
+header h1 {
+    color: var(--lilac-principal);
+    margin-bottom: 10px;
+    font-size: 2.5em;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 10px;
-  border: none;
-  background: #007BFF;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+footer {
+    text-align: center;
+    padding: 15px;
+    color: var(--white);
+    background-color: var(--dark-purple);
+    font-size: 0.9em;
+    margin-top: auto; /* Garante que o rodapé fique no final */
 }
 
-button:hover {
-  background: #0056b3;
+/* -------------------------------------- */
+/* 3. LAYOUT E CONTEÚDO PRINCIPAL */
+/* -------------------------------------- */
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+    padding: 20px;
 }
 
-.hidden {
-  display: none;
+/* Estilo do Card do Quiz (sua tag <section>) */
+main section {
+    max-width: 700px; 
+    width: 100%; 
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: justify;
+    
+    
 }
 
-#answers button {
-  display: block;
-  width: 100%;
-  margin: 8px 0;
-  background: #eee;
-  color: #333;
+main section h2 {
+    margin-bottom: 20px;
+    color: var(--lilac-principal);
 }
 
-#answers button.correct {
-  background: #28a745;
-  color: white;
+.alinhar {
+    text-align: center;
 }
 
-#answers button.wrong {
-  background: #dc3545;
-  color: white;
+
+/* -------------------------------------- */
+/* 4. INSTRUÇÕES (Próxima Etapa) */
+/* -------------------------------------- */
+
+
+/* -------------------------------------- */
+/* 5. BOTÃO DE INICIAR QUIZ */
+/* -------------------------------------- */
+
+#btn-iniciar-quiz {
+    background-color: var(--lilac-principal);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 30px; /* Botão arredondado */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0 var(--dark-purple); /* Efeito 3D sutil */
+    margin-top: 30px; /* Adicionado espaço acima do botão */
+    
 }
 
+/* Efeito ao passar o mouse */
+#btn-iniciar-quiz:hover {
+    background-color: #6a46c6; /* Um pouco mais escuro ao passar o mouse */
+}
+
+/* Efeito ao clicar */
+#btn-iniciar-quiz:active {
+    transform: translateY(5px); /* Move para baixo */
+    box-shadow: 0 0 0 var(--dark-purple); /* Remove a sombra */
+}
+
+/* -------------------------------------- */
+/* 6. RESPONSIVIDADE */
+/* -------------------------------------- */
+
+/* Ajusta o layout para telas menores, como celulares */
 @media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
+    header h1 {
+        font-size: 2em;
+    }
+    
+    /* Ajusta a margem do card em telas pequenas */
+    main {
+        padding: 10px;
+    }
+
+    /* Ajusta o padding do card */
+    main section {
+        padding: 20px;
+    }
+
+    #btn-iniciar-quiz {
+        width: 100%; /* Ajustado para 100% para ocupar toda a largura */
+        font-size: 1em;
+    }
 }
