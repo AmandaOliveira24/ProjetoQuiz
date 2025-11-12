@@ -1,37 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Interativo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+    <header>
     <h1> Nanda's Quiz </h1>
-  </header>
+    <p>Você me conhece mesmo? teste seus conhecimentos sobre mim!</p>
+    </header>
 
-  <main id="quiz-container">
+    <main>
+        <section>
+            <h2 class="alinhar">Bem-vindo(a)!</h2>
+            <div>
+                
+                <h3 class="alinhar">Instruções:</h3>
+                <div style="padding:  0 0 0 150px; margin-top: 20px;">
+                    <ul>
+                        <li>Você terá <strong>10 perguntas</strong> para responder.</li>
+                        <li>Cada pergunta possui apenas <strong>1 resposta correta</strong>.</li>
+                        <li>O tempo é ilimitado! Responda as perguntas no seu tempo.</li>
+                        <li>Se prepare e boa sorte!</li>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="alinhar">
+            <button id="btn-iniciar-quiz">
+                COMEÇAR O QUIZ!
+            </button>
+            </div>
+        </section>
 
-    <button id="start-btn">Iniciar Quiz</button>
-    
-    <div id="loading" class="hidden">Carregando perguntas...</div>
-    <div id="question-container" class="hidden">
-      <h2 id="question-text"></h2>
-      <div id="answers"></div>
-      <button id="next-btn" class="hidden">Próxima</button>
-    </div>
-    <div id="result-container" class="hidden">
-      <h2 id="score-text"></h2>
-      <button id="restart-btn">Jogar novamente</button>
-    </div>
+    </main>
 
-  </main>
+    <footer>
+        <p>&copy; 2025 Projeto de Quiz Interativo</p>
+    </footer>
 
-  <footer>
-    <p>© 2025 Quiz Interativo | Desenvolvido para o Projeto Integrador</p>
-  </footer>
-
-  <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
