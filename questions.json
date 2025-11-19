@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "question": "Qual é o meu signo?",
+    "options": ["Áries", "Touro", "Leão", "Libra"],
+    "answerIndex": 3
+  },
+  {
+    "id": 2,
+    "question": "Qual é minha cor favorita?",
+    "options": ["Lilás", "Azul", "Preto", "Verde"],
+    "answerIndex": 1
+  },
+  {
+    "id": 3,
+    "question": "Quando é o meu aniversário?",
+    "options": ["17/01", "15/04", "01/10", "28/06"],
+    "answerIndex": 2
+  },
+  {
+    "id": 4,
+    "question": "Qual é a minha princesa favorita?",
+    "options": ["Ariel", "Rapunzel", "Merida", "Elsa"],
+    "answerIndex": 1
+  },
+  {
+    "id": 5,
+    "question": "Qual era o nome da minha primeira filha?",
+    "options": ["Lili", "Nina", "Mila", "Sasha"],
+    "answerIndex": 0
+  },
+  {
+    "id": 6,
+    "question": "Quantos animais eu já tive?",
+    "options": ["4", "7", "12", "15"],
+    "answerIndex": 2
+  },
+  {
+    "id": 7,
+    "question": "Qual é o meu nome completo?",
+    "options": ["Amanda Sousa da Silva", "Amanda Rodrigues Oliveira", "Amanda Oliveira dos Santos", "Amanda Sousa de Oliveira"],
+    "answerIndex": 3
+  },
+  {
+    "id": 8,
+    "question": "Qual é o meu hobbie favorito?",
+    "options": ["Ler", "Pintar", "Desenhar", "Escrever"],
+    "answerIndex": 3
+  },
+  {
+    "id": 9,
+    "question": "Qual é o meu desenho de conforto?",
+    "options": ["The Owl House", "Gravity Falls", "Star vs as forças do Mal", "Como Treinar o seu Dragão"],
+    "answerIndex": 2
+  },
+  {
+    "id": 10,
+    "question": "Qual é a cor do meu cabelo?",
+    "options": ["Preto", "Castanho", "Chocolate", "Vermelho"],
+    "answerIndex": 3
+  }
+]
