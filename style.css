@@ -148,3 +148,49 @@ main section h2 {
         font-size: 1em;
     }
 }
+
+/* Lista de opções */
+.lista-opcoes {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.option-btn {
+    width: 100%;
+    background-color: var(--light-blue);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option-btn:hover {
+    transform: scale(1.03);
+}
+
+/* Feedback visual */
+.option-btn.correta {
+    background-color: #52c41a;
+    color: white;
+}
+
+.option-btn.errada {
+    background-color: #ff4d4f;
+    color: white;
+}
+
+.option-btn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.texto-pontuacao {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--dark-purple);
+}
+
