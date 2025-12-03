@@ -90,7 +90,17 @@ main section h2 {
 /* -------------------------------------- */
 /* 4. INSTRUÇÕES (Próxima Etapa) */
 /* -------------------------------------- */
+main section ul {
+    list-style: disc; /* Mantém o estilo de bolinha padrão */
+    margin-left: 0;
+    padding-left: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+}
 
+main section ul li strong {
+    color: var(--lilac-principal);
+}
 
 /* -------------------------------------- */
 /* 5. BOTÃO DE INICIAR QUIZ */
@@ -122,10 +132,89 @@ main section h2 {
     transform: translateY(5px); /* Move para baixo */
     box-shadow: 0 0 0 var(--dark-purple); /* Remove a sombra */
 }
+.lista-opcoes {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.option-btn {
+    width: 100%;
+    background-color: var(--light-blue);
+    color: var(--dark-purple); /* Cor do texto dentro do botão */
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: left; /* Alinha o texto da opção à esquerda */
+    box-shadow: 0 3px 0 #859bc4; /* Sombra sutil para profundidade */
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #8bb4ff; /* Azul um pouco mais claro */
+    transform: translateY(-2px); /* Efeito de "levantar" */
+    box-shadow: 0 5px 0 #859bc4; 
+}
+
+/* Feedback visual (cores de acerto e erro) */
+.option-btn.correta {
+    background-color: #52c41a; /* Verde para correta */
+    color: var(--white);
+    font-weight: bold;
+    box-shadow: 0 3px 0 #388e3c;
+}
+
+.option-btn.errada {
+    background-color: #ff4d4f; /* Vermelho para errada */
+    color: var(--white);
+    font-weight: bold;
+    box-shadow: 0 3px 0 #c62828;
+}
+
+.option-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    /* Adiciona estilo para mostrar qual era a correta quando a errada é clicada */
+}
+
+.texto-pontuacao {
+    margin-top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--dark-purple);
+}
 
 /* -------------------------------------- */
 /* 6. RESPONSIVIDADE */
 /* -------------------------------------- */
+
+#btn-reiniciar, #btn-tentar-novamente, #btn-proxima {
+    /* Reutiliza o estilo do botão de iniciar para consistência */
+    background-color: var(--lilac-principal);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    box-shadow: 0 5px 0 var(--dark-purple);
+    margin-top: 30px; 
+}
+
+#btn-reiniciar:hover, #btn-tentar-novamente:hover, #btn-proxima:hover {
+    background-color: #6a46c6; 
+}
+
+#btn-reiniciar:active, #btn-tentar-novamente:active, #btn-proxima:active {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 var(--dark-purple);
+}
 
 /* Ajusta o layout para telas menores, como celulares */
 @media (max-width: 600px) {
