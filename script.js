@@ -3,6 +3,8 @@
 // ----------------------------
 const btnIniciar = document.getElementById("btn-iniciar-quiz");
 const mainSection = document.querySelector("main section");
+// NOVO: Referência para a barra de progresso
+const progressBar = document.getElementById("progress-bar");
 
 let pontuacao = 0; // Pontuação global
 
@@ -30,9 +32,19 @@ const showError = (msg) => {
     .getElementById("btn-tentar-novamente")
     .addEventListener("click", () => location.reload());
 };
+// ----------------------------
+// NOVO: 3. ATUALIZAR BARRA DE PROGRESSO
+// ----------------------------
+const atualizarProgresso = (indiceAtual, totalPerguntas) => {
+    // Calcula o percentual de progresso
+    const percentual = (indiceAtual / totalPerguntas) * 100;
+    
+    // Aplica o percentual ao estilo da barra
+    progressBar.style.width = `${percentual}%`;
+};
 
 // ----------------------------
-// 3. CARREGAR PERGUNTAS
+// 4. CARREGAR PERGUNTAS
 // ----------------------------
 const carregarPerguntas = () => {
   showLoading();
@@ -50,7 +62,7 @@ const carregarPerguntas = () => {
 };
 
 // ----------------------------
-// 4. INICIAR QUIZ
+// 5. INICIAR QUIZ
 // ----------------------------
 const iniciarQuiz = (perguntas) => {
   pontuacao = 0; // Reset pontuação
@@ -69,12 +81,16 @@ const iniciarQuiz = (perguntas) => {
 };
 
 // ----------------------------
-// 5. RENDERIZAR PERGUNTA
+// 6. RENDERIZAR PERGUNTA
 // ----------------------------
 const renderizarPergunta = (perguntas, indice) => {
   const pergunta = perguntas[indice];
+  const totalPerguntas = perguntas.length; // NOVO: Pega o total de perguntas
 
-  if (!pergunta) return telaFinal();
+  if (!pergunta) return telaFinal(totalPerguntas); // NOVO: Passa o total para a tela final
+  // NOVO: Atualiza a barra antes de renderizar (mostra o progresso *até* essa pergunta)
+  atualizarProgresso(indice, totalPerguntas);
+
 
   mainSection.innerHTML = `
     <h2>${pergunta.question}</h2>
@@ -109,6 +125,8 @@ const renderizarPergunta = (perguntas, indice) => {
       }
 
       document.querySelectorAll(".option-btn").forEach((b) => (b.disabled = true));
+      // NOVO: Atualiza a barra para a próxima etapa (indice + 1)
+      atualizarProgresso(indice + 1, totalPerguntas);
 
       setTimeout(() => {
         renderizarPergunta(perguntas, indice + 1);
@@ -118,9 +136,14 @@ const renderizarPergunta = (perguntas, indice) => {
 };
 
 // ----------------------------
-// 6. TELA FINAL
+// 7. TELA FINAL
 // ----------------------------
-const telaFinal = () => {
+// NOVO: Recebe o total de perguntas
+const telaFinal = (totalPerguntas = 10) => { 
+
+  // NOVO: Garante 100% de progresso na tela final
+  atualizarProgresso(totalPerguntas, totalPerguntas);
+
   mainSection.innerHTML = `
     <div class="alinhar">
       <h2>🎉 Fim do Quiz!</h2>
