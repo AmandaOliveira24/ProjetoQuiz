@@ -58,6 +58,7 @@ footer {
 main {
     flex-grow: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center; /* Centraliza horizontalmente */
     align-items: center; /* Centraliza verticalmente */
     width: 100%;
@@ -301,4 +302,8 @@ main section ul li strong {
     background-color: var(--lilac-principal);
     border-radius: 5px;
     transition: width 0.4s ease-in-out; /* Transição suave */
+}
+/* Barra começa escondida */
+.progress-container {
+    display: none;
 }

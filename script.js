@@ -67,6 +67,9 @@ const carregarPerguntas = () => {
 const iniciarQuiz = (perguntas) => {
   pontuacao = 0; // Reset pontuação
 
+  // 🔹 MOSTRA a barra de progresso quando o quiz inicia
+  document.querySelector(".progress-container").style.display = "block";
+
   mainSection.innerHTML = `
     <div class="alinhar">
       <h2>Quiz Iniciado!</h2>
