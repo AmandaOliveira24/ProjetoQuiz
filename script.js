@@ -5,6 +5,11 @@ const btnIniciar = document.getElementById("btn-iniciar-quiz");
 const mainSection = document.querySelector("main section");
 // NOVO: Referência para a barra de progresso
 const progressBar = document.getElementById("progress-bar");
+const pontuacaoSalva = localStorage.getItem("pontuacaoQuiz");
+
+if (pontuacaoSalva !== null) {
+  console.log("Última pontuação salva:", pontuacaoSalva);
+}
 
 let pontuacao = 0; // Pontuação global
 
@@ -142,15 +147,17 @@ const renderizarPergunta = (perguntas, indice) => {
 // 7. TELA FINAL
 // ----------------------------
 // NOVO: Recebe o total de perguntas
-const telaFinal = (totalPerguntas = 10) => { 
+const telaFinal = (totalPerguntas = 10) => {
 
-  // NOVO: Garante 100% de progresso na tela final
+  // Salva a pontuação no localStorage (API HTML5)
+  localStorage.setItem("pontuacaoQuiz", pontuacao);
+
   atualizarProgresso(totalPerguntas, totalPerguntas);
 
   mainSection.innerHTML = `
     <div class="alinhar">
-      <h2>🎉 Fim do Quiz!</h2>
-      <p>Você acertou <strong>${pontuacao}</strong> de <strong>10</strong> perguntas!</p>
+      <h2>Fim do Quiz</h2>
+      <p>Você acertou <strong>${pontuacao}</strong> de <strong>${totalPerguntas}</strong> perguntas!</p>
 
       <button id="btn-reiniciar">Reiniciar Quiz</button>
     </div>

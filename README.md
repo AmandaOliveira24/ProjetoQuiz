@@ -63,7 +63,7 @@ Conclusão: Todos os requisitos propostos na atividade foram integralmente cumpr
 - [x] Requisição assíncrona com fetch, loading e tratamento de erros  
 - [x] Uso de Promises com .then() e .catch()  
 - [ ] Uso de async/await com try/catch  
-- [ ] Web Storage para persistência de dados  
+- [x] Web Storage para persistência de dados  
 - [ ] API HTML5 adicional (File, Geolocation, Canvas, etc.)  
 - [x] Layout responsivo, semântica HTML e acessibilidade básica  
 - [x] Organização de arquivos e README completo  
@@ -78,6 +78,13 @@ Conclusão: Todos os requisitos propostos na atividade foram integralmente cumpr
 - JSON – Armazenamento das perguntas  
 
 ---
+## APIs HTML5 Utilizadas
+
+O projeto utiliza a API Web Storage (localStorage), que faz parte do conjunto de APIs do HTML5.
+
+Essa API foi empregada para persistir a pontuação final do quiz no navegador, permitindo que os dados permaneçam armazenados mesmo após o recarregamento da página.
+
+O uso do Web Storage atende ao requisito obrigatório da atividade referente à utilização de APIs HTML5 para persistência de dados no lado do cliente.
 
 ## Estrutura de Arquivos
 
